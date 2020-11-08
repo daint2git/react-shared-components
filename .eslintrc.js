@@ -9,7 +9,6 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.eslint.json',
     tsconfigRootDir: __dirname,
-    ecmaVersion: 2020,
     ecmaFeatures: {
       jsx: true,
     },
@@ -29,7 +28,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es2020: true,
   },
 
   rules: {
@@ -60,7 +59,7 @@ module.exports = {
 
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
     },
     'import/resolver': {
       typescript: {
