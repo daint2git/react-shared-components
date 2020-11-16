@@ -9,6 +9,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.eslint.json',
     tsconfigRootDir: __dirname,
+    ecmaVersion: 2020,
     ecmaFeatures: {
       jsx: true,
     },
@@ -17,13 +18,13 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb/hooks',
-    'plugin:import/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'prettier/react',
     'prettier/@typescript-eslint',
   ],
 
-  plugins: ['react', 'prettier'],
+  plugins: ['prettier'],
 
   env: {
     browser: true,
@@ -55,6 +56,9 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
+
+    'no-use-before-define': 0,
+    '@typescript-eslint/no-use-before-define': 2,
   },
 
   settings: {
@@ -75,6 +79,7 @@ module.exports = {
       files: ['./.*.js', './configs/**/*.js'],
       rules: {
         'import/no-extraneous-dependencies': 0,
+        'no-param-reassign': 0,
         '@typescript-eslint/no-var-requires': 0,
         '@typescript-eslint/no-unsafe-assignment': 0,
         '@typescript-eslint/no-unsafe-call': 0,
